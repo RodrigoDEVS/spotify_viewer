@@ -1,29 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_viewer/presentation/screens/home_page/widgets/home_bottom_navigation_bar.dart';
-import 'package:spotify_viewer/presentation/screens/home_page/widgets/home_page_view.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  late PageController _pageController;
-
-  @override
-  void initState() {
-    _pageController = PageController();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Spotify Viewer")),
-      body: HomePageView(pageController: _pageController),
-      bottomNavigationBar: HomeBottomNavigationBar(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.music_note, size: 100, color: Colors.green),
+            SizedBox(height: 20),
+            Text(
+              'Conecta con Spotify',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Aquí puedes agregar la lógica para iniciar sesión con Spotify
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              ),
+              child: Text('Iniciar Sesión con Spotify'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
