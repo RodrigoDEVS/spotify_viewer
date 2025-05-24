@@ -1,16 +1,13 @@
 # spotify_viewer
 
-A new Flutter project.
+Visor de Spotify, permite acceder a tu cuenta para realizar búsquedas, ver recomendaciones y visualizar tus bibliotecas
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Version de Flutter 3.29.2
 
-A few resources to get you started if this is your first Flutter project:
+Antes de iniciar el proyecto se debe ejecutar "flutter pub get" para actualizar las librerias
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### flutter run
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ejecuta el proyecto en el emulador disponible
