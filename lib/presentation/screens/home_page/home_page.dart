@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_viewer/data/api_source/auth_api_source.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Aquí puedes agregar la lógica para iniciar sesión con Spotify
+                AuthApiSource().authenticateWithSpotify();
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
