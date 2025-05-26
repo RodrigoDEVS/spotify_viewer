@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spotify_viewer/presentation/bloc/cubit/page_view_navigation_cubit.dart';
+import 'package:spotify_viewer/presentation/bloc/cubit/dashboard/page_view_navigation_cubit.dart';
 
 class DashboardBottomNavigationBar extends StatelessWidget {
   const DashboardBottomNavigationBar({super.key});

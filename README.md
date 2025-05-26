@@ -11,3 +11,7 @@ Antes de iniciar el proyecto se debe ejecutar "flutter pub get" para actualizar 
 ### flutter run
 
 Ejecuta el proyecto en el emulador disponible
+
+### logout
+
+Abrir la ventana del navegador y pegar el siguiente enlace: https://accounts.spotify.com/logout

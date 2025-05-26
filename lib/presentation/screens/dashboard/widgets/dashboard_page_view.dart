@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spotify_viewer/presentation/bloc/cubit/page_view_navigation_cubit.dart';
+import 'package:spotify_viewer/presentation/bloc/cubit/dashboard/page_view_navigation_cubit.dart';
 
 class DashboardPageView extends StatelessWidget {
   const DashboardPageView({super.key, required PageController pageController})
