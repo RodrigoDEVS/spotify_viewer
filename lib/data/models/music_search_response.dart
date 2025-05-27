@@ -84,7 +84,7 @@ class AlbumElement {
   ExternalUrls? externalUrls;
   String? href;
   String? id;
-  List<Image>? images;
+  List<SpotifyImage>? images;
   String? name;
   String? releaseDate;
   String? releaseDatePrecision;
@@ -131,7 +131,9 @@ class AlbumElement {
     images:
         json["images"] == null
             ? []
-            : List<Image>.from(json["images"]!.map((x) => Image.fromMap(x))),
+            : List<SpotifyImage>.from(
+              json["images"]!.map((x) => SpotifyImage.fromMap(x)),
+            ),
     name: json["name"],
     releaseDate: json["release_date"],
     releaseDatePrecision: json["release_date_precision"],
@@ -228,19 +230,23 @@ class ExternalUrls {
   Map<String, dynamic> toMap() => {"spotify": spotify};
 }
 
-class Image {
+class SpotifyImage {
   int? height;
   int? width;
   String? url;
 
-  Image({this.height, this.width, this.url});
+  SpotifyImage({this.height, this.width, this.url});
 
-  factory Image.fromJson(String str) => Image.fromMap(json.decode(str));
+  factory SpotifyImage.fromJson(String str) =>
+      SpotifyImage.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory Image.fromMap(Map<String, dynamic> json) =>
-      Image(height: json["height"], width: json["width"], url: json["url"]);
+  factory SpotifyImage.fromMap(Map<String, dynamic> json) => SpotifyImage(
+    height: json["height"],
+    width: json["width"],
+    url: json["url"],
+  );
 
   Map<String, dynamic> toMap() => {
     "height": height,
@@ -305,7 +311,7 @@ class ArtistsItem {
   List<String>? genres;
   String? href;
   String? id;
-  List<Image>? images;
+  List<SpotifyImage>? images;
   String? name;
   int? popularity;
   String? type;
@@ -345,7 +351,9 @@ class ArtistsItem {
     images:
         json["images"] == null
             ? []
-            : List<Image>.from(json["images"]!.map((x) => Image.fromMap(x))),
+            : List<SpotifyImage>.from(
+              json["images"]!.map((x) => SpotifyImage.fromMap(x)),
+            ),
     name: json["name"],
     popularity: json["popularity"],
     type: json["type"],

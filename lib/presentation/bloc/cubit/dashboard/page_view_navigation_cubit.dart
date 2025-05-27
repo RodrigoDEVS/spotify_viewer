@@ -9,4 +9,8 @@ class PageViewNavigationCubit extends Cubit<PageViewNavigationState> {
   void changePage(int pageIndex) {
     emit(PageViewNavigationChanged(pageIndex));
   }
+
+  void resetPage() {
+    emit(PageViewNavigationInitial());
+  }
 }

@@ -23,6 +23,11 @@
       - music_repository.dart
   - presentation/
     - bloc/
+      - bloc/
+        - search/
+          - search_bloc.dart
+          - search_event.dart
+          - search_state.dart
       - cubit/
         - auth/
           - auth_cubit.dart

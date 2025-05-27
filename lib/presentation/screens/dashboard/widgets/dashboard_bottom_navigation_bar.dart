@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_viewer/presentation/bloc/cubit/dashboard/page_view_navigation_cubit.dart';
 
 class DashboardBottomNavigationBar extends StatelessWidget {
-  const DashboardBottomNavigationBar({super.key});
+  final PageController pageController;
+  const DashboardBottomNavigationBar({super.key, required this.pageController});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class DashboardBottomNavigationBar extends StatelessWidget {
           currentIndex: currentIndex,
           selectedItemColor: Colors.green,
           onTap: (index) {
-            context.read<PageViewNavigationCubit>().changePage(index);
+            pageController.jumpToPage(index);
           },
         );
       },
