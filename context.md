@@ -12,8 +12,15 @@
   - data/
     - api_source/
       - auth_api_source.dart
+      - authenticated_request.dart
+      - music_api_source.dart
     - local_storage/
       - local_storage.dart
+    - models/
+      - music_search_response.dart
+    - repositories/
+      - music_repository_impl.dart
+      - music_repository.dart
   - presentation/
     - bloc/
       - cubit/
@@ -25,6 +32,9 @@
     - screens/
       - dashboard/
         - dashboard.dart
+        - library_view.dart
+        - search_view.dart
+        - suggestions_view.dart
         - widgets/
           - dashboard_bottom_navigation_bar.dart
           - dashboard_page_view.dart
@@ -32,8 +42,11 @@
         - home_page.dart
       - initial_page/
         - initial_page.dart
+    - theme/
+      - app_theme.dart
     - utils/
       - snackbar_utils.dart
+- .env
 - main.dart
 
 ## Arquitectura

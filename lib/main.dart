@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_viewer/data/local_storage/local_storage.dart';
-import 'package:spotify_viewer/presentation/app_theme.dart';
+import 'package:spotify_viewer/presentation/theme/app_theme.dart';
 import 'package:spotify_viewer/presentation/bloc/cubit/auth/auth_cubit.dart';
 import 'package:spotify_viewer/presentation/bloc/cubit/dashboard/page_view_navigation_cubit.dart';
 import 'package:spotify_viewer/presentation/screens/home_page/home_page.dart';

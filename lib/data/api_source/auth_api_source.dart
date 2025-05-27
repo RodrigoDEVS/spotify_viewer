@@ -40,8 +40,45 @@ class AuthApiSource {
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        await LocalStorage.saveAccessToken(data['access_token']);
-        //print('\x1B[33mdata: $data\x1B[0m');
+        await LocalStorage.saveAccessToken(
+          data['access_token'],
+          data['refresh_token'],
+        );
+        print('\x1B[33mdata: $data\x1B[0m');
+        return data;
+      } else {
+        throw Exception('Error obteniendo el token de acceso');
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<Map<String, dynamic>> refreshToken() async {
+    var refreshToken = await LocalStorage.getRefreshToken();
+    if (refreshToken == null || refreshToken.isEmpty) {
+      throw Exception(
+        'No hay token de actualización disponible, por favor autentique de nuevo.',
+      );
+    }
+    try {
+      final response = await http.post(
+        Uri.parse('https://accounts.spotify.com/api/token'),
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: {
+          'grant_type': 'refresh_token',
+          'refresh_token': refreshToken,
+          'client_id': CLIENT_ID,
+        },
+      );
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        await LocalStorage.saveAccessToken(
+          data['access_token'],
+          data['refresh_token'],
+        );
+        print('\x1B[33mdata: $data\x1B[0m');
         return data;
       } else {
         throw Exception('Error obteniendo el token de acceso');
