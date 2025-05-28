@@ -4,6 +4,7 @@ import 'package:spotify_viewer/data/api_source/music_api_source.dart';
 import 'package:spotify_viewer/data/local_storage/local_storage.dart';
 import 'package:spotify_viewer/data/repositories/music_repository_impl.dart';
 import 'package:spotify_viewer/domain/usecases/music_usecases.dart';
+import 'package:spotify_viewer/presentation/bloc/bloc/favorites/favorites_bloc.dart';
 import 'package:spotify_viewer/presentation/bloc/bloc/search/search_bloc.dart';
 import 'package:spotify_viewer/presentation/theme/app_theme.dart';
 import 'package:spotify_viewer/presentation/bloc/cubit/auth/auth_cubit.dart';
@@ -34,6 +35,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => AuthCubit()..checkAuthStatus()),
         BlocProvider(
           create: (context) => SearchBloc(musicUsecase: musicUsecase),
+        ),
+        BlocProvider(
+          create: (context) => FavoritesBloc(musicUsecase: musicUsecase),
         ),
       ],
       child: MaterialApp(

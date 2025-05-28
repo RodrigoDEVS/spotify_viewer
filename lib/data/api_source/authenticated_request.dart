@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:spotify_viewer/data/api_source/auth_api_source.dart';
 import 'package:spotify_viewer/data/local_storage/local_storage.dart';
 
-Future<Map<String, dynamic>> authenticatedRequest(
+Future<dynamic> authenticatedRequest(
   Future<http.Response> Function(String token) request,
 ) async {
   try {
@@ -27,6 +27,7 @@ Future<Map<String, dynamic>> authenticatedRequest(
     }
 
     if (response.statusCode == 200) {
+      if (response.body.isEmpty) return null;
       return json.decode(response.body);
     } else {
       throw Exception('Error: ${response.reasonPhrase}');

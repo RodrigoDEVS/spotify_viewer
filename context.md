@@ -17,17 +17,21 @@
     - local_storage/
       - local_storage.dart
     - models/
+      - favorites_response.dart
       - music_search_response.dart
     - repositories/
       - music_repository_impl.dart
       - music_repository.dart
   - presentation/
     - bloc/
-      - bloc/
-        - search/
-          - search_bloc.dart
-          - search_event.dart
-          - search_state.dart
+      - favorites/
+        - favorites_bloc.dart
+        - favorites_event.dart
+        - favorites_state.dart
+      - search/
+        - search_bloc.dart
+        - search_event.dart
+        - search_state.dart
       - cubit/
         - auth/
           - auth_cubit.dart
@@ -37,7 +41,7 @@
     - screens/
       - dashboard/
         - dashboard.dart
-        - library_view.dart
+        - favorites_view.dart
         - search_view.dart
         - suggestions_view.dart
         - widgets/

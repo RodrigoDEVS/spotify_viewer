@@ -20,7 +20,7 @@ class DashboardBottomNavigationBar extends StatelessWidget {
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Buscar'),
             BottomNavigationBarItem(
               icon: Icon(Icons.library_music),
-              label: 'Biblioteca',
+              label: 'Favoritos',
             ),
           ],
           currentIndex: currentIndex,

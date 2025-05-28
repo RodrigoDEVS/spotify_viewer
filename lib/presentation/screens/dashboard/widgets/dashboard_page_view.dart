@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_viewer/presentation/bloc/cubit/dashboard/page_view_navigation_cubit.dart';
-import 'package:spotify_viewer/presentation/screens/dashboard/library_view.dart';
+import 'package:spotify_viewer/presentation/screens/dashboard/favorites_view.dart';
 import 'package:spotify_viewer/presentation/screens/dashboard/search_view.dart';
 import 'package:spotify_viewer/presentation/screens/dashboard/suggestions_view.dart';
 
@@ -26,7 +26,7 @@ class DashboardPageView extends StatelessWidget {
         onPageChanged:
             (value) =>
                 context.read<PageViewNavigationCubit>().changePage(value),
-        children: [SuggestionsView(), SearchView(), LibraryView()],
+        children: [SuggestionsView(), SearchView(), FavoritesView()],
       ),
     );
   }

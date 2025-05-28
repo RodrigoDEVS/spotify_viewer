@@ -16,7 +16,7 @@ class AuthApiSource {
   Future<void> authenticateWithSpotify() async {
     final state = _generateRandomString(16);
     final scope =
-        'user-read-private user-read-email playlist-read-private streaming user-read-playback-state user-modify-playback-state';
+        'user-read-private user-read-email playlist-read-private streaming user-read-playback-state user-modify-playback-state user-library-read user-library-modify user-top-read';
 
     _launchSpotifyLogin(state: state, scope: scope);
   }

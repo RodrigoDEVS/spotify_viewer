@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_viewer/data/models/music_search_response.dart';
+import 'package:spotify_viewer/presentation/bloc/bloc/favorites/favorites_bloc.dart';
 import 'package:spotify_viewer/presentation/bloc/bloc/search/search_bloc.dart';
 
 class SearchView extends StatelessWidget {
@@ -62,6 +63,14 @@ class SearchView extends StatelessWidget {
                                       item.album!.images!.first.url!,
                                     )
                                     : null,
+                            trailing: InkWell(
+                              onTap: () {
+                                context.read<FavoritesBloc>().add(
+                                  AddFavoriteEvent(trackId: item.id!),
+                                );
+                              },
+                              child: Icon(Icons.add_circle),
+                            ),
                           )
                           : item is ArtistsItem
                           ? ListTile(

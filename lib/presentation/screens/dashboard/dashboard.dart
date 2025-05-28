@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spotify_viewer/presentation/bloc/bloc/favorites/favorites_bloc.dart';
 import 'package:spotify_viewer/presentation/bloc/bloc/search/search_bloc.dart';
 import 'package:spotify_viewer/presentation/bloc/cubit/auth/auth_cubit.dart';
 import 'package:spotify_viewer/presentation/bloc/cubit/dashboard/page_view_navigation_cubit.dart';
@@ -19,6 +20,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   void initState() {
     _pageController = PageController();
+    context.read<FavoritesBloc>().add(LoadFavoritesEvent());
     super.initState();
   }
 
