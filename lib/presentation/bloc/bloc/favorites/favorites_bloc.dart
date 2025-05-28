@@ -23,11 +23,10 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       emit(FavoritesLoading());
       try {
         await musicUsecase.addFavorite(trackId: event.trackId);
+        emit(FavoriteAdded());
         final response = await musicUsecase.getFavorites();
         emit(FavoritesLoaded(response));
-      } catch (e, stack) {
-        print('Error al agregar o cargar favoritos: $e');
-        print(stack);
+      } catch (e) {
         emit(FavoritesError('$e'));
       }
     });

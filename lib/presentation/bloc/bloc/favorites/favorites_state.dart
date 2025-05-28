@@ -18,3 +18,5 @@ final class FavoritesError extends FavoritesState {
 
   FavoritesError(this.message);
 }
+
+final class FavoriteAdded extends FavoritesState {}
